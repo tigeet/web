@@ -12,23 +12,35 @@ cite,
 code {
   line-height: 1;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: start;
+  color: black;
+  background-color: transparent;
+  padding: 0;
+  word-spacing: normal;
+  letter-spacing: normal;
+  font-variant: normal; /* Изменение переформатированного текста */
+  text-transform: none; /* Изменение регистра текста */
+  text-decoration: none; /* underline, line-through, etc */
 }
 
-* {
-  font-size: 16px;
-}
 h1 {
   font-size: 3em;
+  font-weight: 600;
 }
 h2 {
   font-size: 2em;
+  font-weight: 500;
 }
 h3 {
   font-size: 2em;
+  font-weight: 500;
 }
 h4,
 h5 {
   font-size: 1.5em;
+  font-weight: 400;
 }
 h6 {
   font-size: 1.25em;
