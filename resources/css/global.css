@@ -8,6 +8,7 @@ p,
 sub,
 sup,
 span,
+a,
 cite,
 code {
   line-height: 1;
@@ -46,12 +47,7 @@ h6 {
   font-size: 1.25em;
 }
 
-p {
+p,
+a {
   font-size: 1em;
-}
-
-.link {
-  text-decoration: none;
-  cursor: pointer;
-  color: inherit;
 }

@@ -6,7 +6,6 @@
   --color-text: #000000;
 }
 
-/* 3e6091 */
 html {
   overflow-x: hidden;
 }
@@ -14,6 +13,24 @@ html {
 .wrapper {
   width: 100%;
   max-width: 70%;
+}
+
+.link {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: background-color 300ms ease;
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+.link:hover {
+  background-color: #7c698317;
+}
+
+.link.link-active {
+  color: var(--color-accent);
+  font-weight: 500;
 }
 @media screen and (min-width: 576px) {
   .wrapper {
@@ -156,7 +173,6 @@ main {
       top: 16px;
       flex: 0 0 auto;
       & ul {
-        gap: 8px;
         list-style: none;
         & li {
           margin-bottom: 8px;
@@ -220,6 +236,10 @@ footer {
           flex-direction: column;
           gap: 16px;
         }
+      }
+
+      #footer-nav__metric {
+        visibility: hidden;
       }
 
       & .footer-nav__col {
