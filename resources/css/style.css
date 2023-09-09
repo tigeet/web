@@ -197,6 +197,10 @@ main {
           font-size: 1em;
         }
       }
+
+      & .author:nth-child(even) .author__role {
+        color: var(--color-accent);
+      }
     }
   }
 }
