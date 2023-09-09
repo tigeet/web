@@ -151,6 +151,9 @@ main {
     }
 
     & aside {
+      position: sticky;
+      left: 0;
+      top: 16px;
       flex: 0 0 auto;
       & ul {
         gap: 8px;
