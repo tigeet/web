@@ -27,10 +27,18 @@
           </section>
 
           <section class="nav_links">
-            <p class="nav_link">About</p>
-            <p class="nav_link">Syntax</p>
-            <p class="nav_link">Tools</p>
-            <p class="nav_link">More</p>
+            <a href="/about.html" class="nav_link link">
+              <p>About</p>
+            </a>
+            <a href="/syntax.html" class="nav_link link">
+              <p>Syntax</p>
+            </a>
+            <a href="/tools.html" class="nav_link link">
+              <p>Tools</p>
+            </a>
+            <a href="/more.html" class="nav_link link">
+              <p>More</p>
+            </a>
           </section>
         </div>
       </div>
@@ -38,10 +46,10 @@
 
     <section class="hero">
       <div class="wrapper">
-        <div class="hero_content">
-          <h1>The Markdown Basics</h1>
-          <h2>A minimalistic and readable markdown language</h2>
-          <div class="cite_wrapper">
+        <div class="hero__content">
+          <h1 class="hero__title">The Markdown Basics</h1>
+          <h2 class="hero__subtitle">A minimalistic and readable markdown language</h2>
+          <div class="hero__quote">
             <cite><sup>
                 "Simplicity is the ultimate sophistication"
               </sup> <sub>
@@ -55,7 +63,6 @@
   </header>
   <main>
     <div class="wrapper">
-
       <article class="content">
         <section class="syntax">
           <h3 class="syntax__title">Headings</h3>
@@ -82,16 +89,16 @@
         </section>
       </article>
 
-      <aside>
+      <aside class="toc">
         <ul>
           <li>
-            <p>Headings</p>
+            <span class="toc__item link">Headings</span>
           </li>
           <li>
-            <p>Blockquotes</p>
+            <span class="toc__item link">Blockquotes</span>
           </li>
           <li>
-            <p>Lists</p>
+            <span class="toc__item link">Lists</span>
           </li>
         </ul>
       </aside>
@@ -101,52 +108,52 @@
 
   <footer>
     <div class="wrapper">
-      <div class="row">
-        <div class="col">
-          <p class="footer__logo">
+      <div class="footer-nav__row">
+        <div class="footer-nav__col">
+          <p class="footer-nav__logo footer-nav__heading">
             Markdown Basics
           </p>
-          <p>Created by <b>koido</b></p>
+          <span class="link footer-nav__link">Created by <b>koido</b></span>
         </div>
-        <div class="col">
-          <h6 class="col__title">Links</h6>
-          <ul class="col__list">
-            <li class="col__item">
-              <p>Home</p>
+        <div class="footer-nav__col">
+          <h6 class="footer-nav__heading">Links</h6>
+          <ul class="footer-nav__list">
+            <li class="footer-nav__item">
+              <span class="link footer-nav__link">Home</span>
             </li>
-            <li class="col__item">
-              <p>Docs</p>
+            <li class="footer-nav__item">
+              <span class="link footer-nav__link">Docs</span>
             </li>
-            <li class="col__item">
-              <p>Examples</p>
+            <li class="footer-nav__item">
+              <span class="link footer-nav__link">Examples</span>
             </li>
           </ul>
         </div>
-        <div class="col">
-          <h6 class="col__title">Guides</h6>
-          <ul class="col__list">
-            <li class="col__item">
-              <p>Getting Started</p>
+        <div class="footer-nav__col">
+          <h6 class="footer-nav__heading">Guides</h6>
+          <ul class="footer-nav__list">
+            <li class="footer-nav__item">
+              <span class="link footer-nav__link">Getting Started</span>
             </li>
-            <li class="col__item">
-              <p>Documentation</p>
+            <li class="footer-nav__item">
+              <span class="link footer-nav__link">Documentation</span>
             </li>
-            <li class="col__item">
-              <p>Books</p>
+            <li class="footer-nav__item">
+              <span class="link footer-nav__link">Books</span>
             </li>
           </ul>
         </div>
-        <div class="col">
-          <h6 class="col__title">Community</h6>
-          <ul class="col__list">
-            <li class="col__item">
-              <p>Discussions</p>
+        <div class="footer-nav__col">
+          <h6 class="footer-nav__heading">Community</h6>
+          <ul class="footer-nav__list">
+            <li class="footer-nav__item">
+              <span class="link footer-nav__link">Discussions</span>
             </li>
-            <li class="col__item">
-              <p>Issues</p>
+            <li class="footer-nav__item">
+              <span class="link footer-nav__link">Issues</span>
             </li>
-            <li class="col__item">
-              <p>About</p>
+            <li class="footer-nav__item">
+              <span class="link footer-nav__link">About</span>
             </li>
           </ul>
         </div>

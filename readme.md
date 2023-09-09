@@ -1,3 +1,5 @@
-Шукурулаев Леонид Игоревич
-M33011
-Markdown Basics
+---
+ФИО: Шукурулаев Леонид Игоревич
+ISUID: M33011
+title: Markdown Basics
+---
