@@ -1,17 +1,12 @@
 const linkSelector = ".nav_link";
 const linkModifier = "link-active";
 
-const urlToPage = (url) => url.pathname.substring(1).split(".")[0];
 (function () {
-  const url = window.location;
-
-  const currentPage = urlToPage(url);
-  console.log(currentPage);
+  const url = window.location.href;
 
   const links = document.querySelectorAll(linkSelector);
   for (const link of links) {
-    const linkValue = urlToPage(new URL(link.href));
-    if (linkValue !== currentPage) continue;
+    if (link.href !== url) continue;
 
     link.classList.add(linkModifier);
   }
