@@ -15,7 +15,8 @@ const formVersion = document.getElementById(formVersionId);
 const formDescription = document.getElementById(formDescriptionId);
 const formType = document.getElementById(formTypeId);
 const vhList = document.getElementById(vhListId);
-
+const filterSearch = document.getElementById("vh-filter-search");
+const filterType = document.getElementById("vh-filter-type");
 const versionHistory = [];
 
 const createVersion = ({ version, desciption }) => {
@@ -34,6 +35,23 @@ const createVersion = ({ version, desciption }) => {
   vhItem.appendChild(vhItemDescription);
   return vhItem;
 };
+
+const filterVh = () => {
+  const searchValue = filterSearch.value;
+  const typeValue = filterType.value;
+  return versionHistory.filter(
+    ({ version, desciption, type }) =>
+      desciption.includes(searchValue) && type === typeValue
+  );
+};
+
+const updateVh = (vh) => {
+  vhList.innerHTML = null;
+  vh.forEach(({ version, desciption }) =>
+    vhList.appendChild(createVersion({ version, desciption }))
+  );
+};
+
 form.onsubmit = (e) => {
   e.preventDefault();
   e.stopPropagation();
@@ -44,8 +62,12 @@ form.onsubmit = (e) => {
   const obj = { version, desciption, type };
   versionHistory.push(obj);
 
-  vhList.innerHTML = null;
-  versionHistory.forEach(({ version, desciption }) =>
-    vhList.appendChild(createVersion({ version, desciption }))
-  );
+  updateVh(filterVh());
+};
+
+filterSearch.onchange = () => updateVh(filterVh(versionHistory));
+
+filterType.onchange = () => {
+  console.log("type on change");
+  updateVh(filterVh(versionHistory));
 };
