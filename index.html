@@ -6,8 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="./resources/css/reset.css">
+
+  <link rel="stylesheet" href="./resources/css/nav.css">
+  <link rel="stylesheet" href="./resources/css/hero.css">
+  <link rel="stylesheet" href="./resources/css/main.css">
+  <link rel="stylesheet" href="./resources/css/footer.css">
   <link rel="stylesheet" href="./resources/css/global.css">
-  <link rel="stylesheet" href="./resources/css/style.css">
+  <link rel="stylesheet" href="./resources/css/syntax.css">
+  <link rel="stylesheet" href="./resources/css/author.css">
+  <link rel="stylesheet" href="./resources/css/content_item.css">
+
   <link rel="icon" href="./resources/assets/icon.png" type="image/png">
 
   <script src="./resources/scripts/load.js" defer></script>
@@ -23,23 +31,23 @@
   <header>
     <nav>
       <div class="wrapper">
-        <div class="nav_content">
+        <div class="nav__content">
           <section class="logo">
             <img class="logo__icon" src="./resources/assets/icon.png" alt="logo">
             <h6>Markdown Basics</h6>
           </section>
 
-          <section class="nav_links">
-            <a href="/index.html" class="nav_link link">
+          <section class="nav__links">
+            <a href="/" class="nav__link link link-round">
               Home
             </a>
-            <a href="/about.html" class="nav_link link">
+            <a href="/about.html" class="nav__link link link-round">
               About
             </a>
-            <a href="/tools.html" class="nav_link link">
+            <a href="/tools.html" class="nav__link link link-round">
               Tools
             </a>
-            <a href="/more.html" class="nav_link link">
+            <a href="/more.html" class="nav__link link link-round">
               More
             </a>
           </section>
@@ -67,8 +75,8 @@
   <main>
     <div class="wrapper">
       <div class="content">
-        <section class="syntax">
-          <h3 class="syntax__heading content__heading">Syntax</h3>
+        <section class="content__section">
+          <h3 class="content__heading">Syntax</h3>
           <div class="syntax__list">
             <section class="syntax__item">
               <h4 class="syntax__title">Headings</h4>
@@ -99,8 +107,8 @@
 
 
 
-        <section class="authors">
-          <h3 class="authors__heading content__heading">Authors</h3>
+        <section class="content__section">
+          <h3 class="content__heading">Authors</h3>
           <div class="authors__grid">
             <div class="author">
               <img src="https://cdn.7tv.app/emote/60aea4074b1ea4526d3c97a9/4x.webp" alt="profile picture"
@@ -135,13 +143,13 @@
         <aside class="toc">
           <ul>
             <li>
-              <span class="toc__item link">Headings</span>
+              <span class="toc__item link link-round">Headings</span>
             </li>
             <li>
-              <span class="toc__item link">Blockquotes</span>
+              <span class="toc__item link link-round">Blockquotes</span>
             </li>
             <li>
-              <span class="toc__item link">Lists</span>
+              <span class="toc__item link link-round">Lists</span>
             </li>
           </ul>
         </aside>
@@ -152,23 +160,19 @@
   <footer>
     <div class="wrapper">
       <div class="footer-nav__row">
-
-
         <div class="footer-nav__col">
           <p class="footer-nav__logo footer-nav__heading">
             Markdown Basics
           </p>
           <ul class="footer-nav__list">
             <li class="footer-nav__item">
-              <span class="link footer-nav__link">Created by <b>koido</b></span>
+              <span class="footer-nav__link">Created by <b>koido</b></span>
             </li>
             <li class="footer-nav__item" id="footer-nav__metric">
-              <span class="link footer-nav__link">Page loaded in <span id="footer-nav__page-load">0</span> ms</span>
+              <span class="footer-nav__link">Page loaded in <span id="footer-nav__page-load">0</span> ms</span>
             </li>
           </ul>
         </div>
-
-
 
         <div class="footer-nav__col">
           <h6 class="footer-nav__heading">Links</h6>
@@ -184,6 +188,7 @@
             </li>
           </ul>
         </div>
+
         <div class="footer-nav__col">
           <h6 class="footer-nav__heading">Guides</h6>
           <ul class="footer-nav__list">
@@ -198,8 +203,10 @@
             </li>
           </ul>
         </div>
+
         <div class="footer-nav__col">
           <h6 class="footer-nav__heading">Community</h6>
+
           <ul class="footer-nav__list">
             <li class="footer-nav__item">
               <span class="link footer-nav__link">Discussions</span>

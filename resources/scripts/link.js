@@ -1,4 +1,4 @@
-const linkSelector = ".nav_link";
+const linkSelector = ".nav__link";
 const linkModifier = "link-active";
 
 (function () {

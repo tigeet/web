@@ -1,0 +1,23 @@
+.hero {
+  background-color: var(--color-accent);
+  display: flex;
+  justify-content: center;
+
+  & .wrapper {
+    padding: 16px 0;
+    & .hero__content {
+      display: flex;
+      flex-direction: column;
+      & .hero__title {
+        margin-bottom: 4px;
+      }
+      & .hero__subtitle {
+        margin-bottom: 8px;
+      }
+      & .hero__quote {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}

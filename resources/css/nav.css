@@ -1,0 +1,38 @@
+nav {
+  display: flex;
+  justify-content: center;
+  height: 48px;
+  align-items: center;
+
+  & .wrapper {
+    & .nav__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      & .logo {
+        width: 300px;
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        gap: 8px;
+
+        & .logo__icon {
+          height: 32px;
+          object-fit: contain;
+        }
+      }
+
+      & .nav__links {
+        @media screen and (max-width: 576px) {
+          & {
+            display: none;
+          }
+        }
+
+        display: flex;
+        flex: 0 1 auto;
+        gap: 16px;
+      }
+    }
+  }
+}
