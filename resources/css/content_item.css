@@ -7,10 +7,5 @@
   & .content__heading {
     margin-bottom: 16px;
   }
-  & .syntax__list {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    gap: 12px;
-  }
+
 }

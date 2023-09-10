@@ -12,13 +12,13 @@
   <link rel="stylesheet" href="./resources/css/hero.css">
   <link rel="stylesheet" href="./resources/css/main.css">
   <link rel="stylesheet" href="./resources/css/footer.css">
-
-
+  <link rel="stylesheet" href="./resources/css/content_item.css">
+  <link rel="stylesheet" href="./resources/css/vh.css">
   <link rel="icon" href="./resources/assets/icon.png" type="image/png">
 
   <script src="./resources/scripts/load.js" defer></script>
   <script src="./resources/scripts/link.js" defer></script>
-
+  <script src="./resources/scripts/vh.js" defer></script>
   <meta name="keywords" content="md, MD, markdown, syntax, markdown syntax">
   <meta name="description" content="The markdown syntax basics">
   <meta name="author" content="koido">
@@ -71,7 +71,60 @@
     </section>
   </header>
 
-  <main></main>
+  <main>
+    <div class="wrapper">
+      <div class="content">
+        <section class="content__section vh">
+          <h3 class="content__heading">Version History</h3>
+          <form action="" id='vh-form' class="vh__form">
+            <div class="vh__form-item">
+              <label for="vh-form-version">Version</label>
+              <input type="text" id="vh-form-version" placeholder="1.0.0" class="vh__form-input vh__form-version">
+            </div>
+            <div class="vh__form-item">
+              <label for="vh-form-description">Description</label>
+              <input type="text" id="vh-form-description" placeholder="Version Description Here"
+                class="vh__form-input vh__form-description">
+            </div>
+
+            <div class="vh__form-item">
+              <label for="vh-form-type">Type</label>
+
+              <select id="vh-form-type" class="vh__select">
+                <option class=" vh__select-option" value="major">Major</option>
+                <option class="vh__select-option" value="minor">Minor</option>
+                <option class="vh__select-option" value="patch">Patch</option>
+                <option class="vh__select-option" value="all">All</option>
+              </select>
+            </div>
+
+            <input type="submit" id="vh-submit" class="vh__button" value="Update">
+          </form>
+          <div class="vh__filter">
+            <input type="text" id="vh__search" placeholder="Search" class="vh__form-input vh__filter-search">
+            <select id="vh-filter-select" class="vh__select">
+              <option class=" vh__select-option" value="major">Major</option>
+              <option class="vh__select-option" value="minor">Minor</option>
+              <option class="vh__select-option" value="patch">Patch</option>
+              <option class="vh__select-option" value="all">All</option>
+            </select>
+          </div>
+
+          <div class="vh__list" id="vh-list">
+            <div class="vh__item">
+              <span class="vh__item-version">1.0.0</span>
+              <span class="vh__item-description">Description for version 1</span>
+            </div>
+            <div class="vh__item">
+              <span class="vh__item-version">1.0.1</span>
+              <span class="vh__item-description">Description for version 2</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
   <footer>
     <div class="wrapper">
       <div class="footer-nav__row">

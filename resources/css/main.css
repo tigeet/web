@@ -9,6 +9,13 @@ main {
     display: flex;
     gap: 32px;
 
+    & .syntax__list {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      gap: 12px;
+    }
+
     & aside {
       position: sticky;
       left: 0;

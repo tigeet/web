@@ -10,7 +10,10 @@ sup,
 span,
 a,
 cite,
-code {
+label,
+input,
+select,
+option button code {
   line-height: 1;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
