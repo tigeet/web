@@ -1,0 +1,7 @@
+.content-item {
+  flex: 1 1 auto;
+
+  & .content-item__heading {
+    margin-bottom: 12px;
+  }
+}

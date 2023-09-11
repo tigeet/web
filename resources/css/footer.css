@@ -24,7 +24,6 @@ footer {
       & .footer-nav__col {
         & .footer__logo {
           font-size: 1.25em;
-          margin-bottom: 6px;
         }
 
         & .footer-nav__heading {

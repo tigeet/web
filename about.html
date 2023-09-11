@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./resources/css/hero.css">
   <link rel="stylesheet" href="./resources/css/main.css">
   <link rel="stylesheet" href="./resources/css/footer.css">
-  <link rel="stylesheet" href="./resources/css/content_item.css">
+  <link rel="stylesheet" href="./resources/css/content-item.css">
   <link rel="stylesheet" href="./resources/css/vh.css">
   <link rel="icon" href="./resources/assets/icon.png" type="image/png">
 
@@ -73,14 +73,16 @@
 
   <main>
     <div class="wrapper">
-      <div class="content">
-        <section class="content__section vh">
-          <h3 class="content__heading">Version History</h3>
+      <div class="content-list">
+        <section class="content-item vh">
+          <h3 class="content-item__heading">Version History</h3>
+
           <form action="" id='vh-form' class="vh__form">
             <div class="vh__form-item">
               <label for="vh-form-version">Version</label>
               <input type="text" id="vh-form-version" placeholder="1.0.0" class="vh__form-input vh__form-version">
             </div>
+
             <div class="vh__form-item">
               <label for="vh-form-description">Description</label>
               <input type="text" id="vh-form-description" placeholder="Version Description Here"
@@ -93,20 +95,20 @@
               <select id="vh-form-type" class="vh__select">
                 <option class=" vh__select-option" value="major">Major</option>
                 <option class="vh__select-option" value="minor">Minor</option>
-                <option class="vh__select-option" value="patch">Patch</option>
-                <option class="vh__select-option" value="all">All</option>
+                <option class="vh__select-option" value="patch" selected>Patch</option>
               </select>
             </div>
 
             <input type="submit" id="vh-submit" class="vh__button" value="Update">
           </form>
+
           <div class="vh__filter">
             <input type="text" id="vh-filter-search" placeholder="Search" class="vh__form-input vh__filter-search">
             <select id="vh-filter-type" class="vh__select">
               <option class=" vh__select-option" value="major">Major</option>
               <option class="vh__select-option" value="minor">Minor</option>
               <option class="vh__select-option" value="patch">Patch</option>
-              <option class="vh__select-option" value="all">All</option>
+              <option class="vh__select-option" value="Any" selected="selected">Any</option>
             </select>
           </div>
 
