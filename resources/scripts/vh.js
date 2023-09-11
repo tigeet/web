@@ -5,30 +5,6 @@
 //   type: VersionType;
 // };
 
-const versionHistory = [
-  {
-    version: "1.0.0",
-    description: "Description for version 1.0.0",
-    type: "major",
-  },
-
-  {
-    version: "1.0.1",
-    description: "Description for version 1.0.1",
-    type: "patch",
-  },
-  {
-    version: "1.0.2",
-    description: "Description for version 1.0.2",
-    type: "patch",
-  },
-  {
-    version: "1.1.0",
-    description: "Description for version 1.1.0",
-    type: "minor",
-  },
-];
-
 const FILTER_TYPE_ANY = "any";
 
 (function () {
@@ -60,6 +36,8 @@ const FILTER_TYPE_ANY = "any";
   function render() {
     vhList.innerHTML = "";
 
+    const versionHistory = JSON.parse(localStorage.getItem("vh")) ?? [];
+
     versionHistory
       .filter((version) => {
         if (filterType.value === FILTER_TYPE_ANY) return true;
@@ -78,7 +56,10 @@ const FILTER_TYPE_ANY = "any";
     const description = formDescription.value;
     const type = formType.value;
     const obj = { version, description, type };
-    versionHistory.push(obj);
+
+    const versionHistory = JSON.parse(localStorage.getItem("vh")) ?? [];
+    const updated = JSON.stringify([...versionHistory, obj]);
+    localStorage.setItem("vh", updated);
 
     render();
   };
