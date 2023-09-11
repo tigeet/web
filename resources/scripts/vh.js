@@ -1,8 +1,11 @@
+// type VersionType = "major" | "minor" | "patch";
 // type Version = {
-//   version: string,
-//   description: String,
-//   type: "major" | "minor" | "patch",
+//   version: string;
+//   description: string;
+//   type: VersionType;
 // };
+
+const FILTER_TYPE_ANY = "any";
 
 const formId = "vh-form";
 const formVersionId = "vh-form-version";
@@ -17,9 +20,32 @@ const formType = document.getElementById(formTypeId);
 const vhList = document.getElementById(vhListId);
 const filterSearch = document.getElementById("vh-filter-search");
 const filterType = document.getElementById("vh-filter-type");
-const versionHistory = [];
 
-const createVersion = ({ version, desciption }) => {
+const versionHistory = [
+  {
+    version: "1.0.0",
+    description: "Description for version 1.0.0",
+    type: "major",
+  },
+
+  {
+    version: "1.0.1",
+    description: "Description for version 1.0.1",
+    type: "patch",
+  },
+  {
+    version: "1.0.2",
+    description: "Description for version 1.0.2",
+    type: "patch",
+  },
+  {
+    version: "1.1.0",
+    description: "Description for version 1.1.0",
+    type: "minor",
+  },
+];
+
+function createVersionElement({ version, description }) {
   const vhItem = document.createElement("div");
   vhItem.classList.add("vh__item");
 
@@ -27,47 +53,43 @@ const createVersion = ({ version, desciption }) => {
   vhItemVersion.classList.add("vh__item-version");
   vhItemVersion.innerHTML = version;
 
-  const vhItemDescription = document.createElement("span");
+  const vhItemDescription = document.createElement("p");
   vhItemDescription.classList.add("vh__item-description");
-  vhItemDescription.innerHTML = desciption;
+  vhItemDescription.innerHTML = description;
 
   vhItem.appendChild(vhItemVersion);
   vhItem.appendChild(vhItemDescription);
   return vhItem;
-};
+}
 
-const filterVh = () => {
-  const searchValue = filterSearch.value;
-  const typeValue = filterType.value;
-  return versionHistory.filter(
-    ({ version, desciption, type }) =>
-      desciption.includes(searchValue) && type === typeValue
-  );
-};
+function render() {
+  vhList.innerHTML = "";
+  console.log(filterType.value);
 
-const updateVh = (vh) => {
-  vhList.innerHTML = null;
-  vh.forEach(({ version, desciption }) =>
-    vhList.appendChild(createVersion({ version, desciption }))
-  );
-};
+  versionHistory
+    .filter((version) => {
+      if (filterType.value === FILTER_TYPE_ANY) return true;
+      return version.type === filterType.value;
+    })
+    .filter((version) => version.description.includes(filterSearch.value))
+    .map((version) => createVersionElement(version))
+    .forEach((versionElement) => vhList.appendChild(versionElement));
+}
 
 form.onsubmit = (e) => {
   e.preventDefault();
   e.stopPropagation();
 
-  const version = formVersion?.value;
-  const desciption = formDescription?.value;
-  const type = formType?.value;
-  const obj = { version, desciption, type };
+  const version = formVersion.value;
+  const description = formDescription.value;
+  const type = formType.value;
+  const obj = { version, description, type };
   versionHistory.push(obj);
 
-  updateVh(filterVh());
+  render();
 };
 
-filterSearch.onchange = () => updateVh(filterVh(versionHistory));
+filterSearch.onchange = () => render();
 
-filterType.onchange = () => {
-  console.log("type on change");
-  updateVh(filterVh(versionHistory));
-};
+filterType.onchange = () => render();
+render();

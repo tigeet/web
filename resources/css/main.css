@@ -21,13 +21,9 @@ main {
           gap: 12px;
 
           .syntax__item {
-            & .syntax__title {
-              margin-bottom: 12px;
-            }
-
-            & .syntax__descripton {
-              margin-bottom: 8px;
-            }
+            gap: 12px;
+            display: flex;
+            flex-direction: column;
 
             & .syntax__code {
               display: block;
@@ -78,9 +74,11 @@ main {
       top: 16px;
       flex: 0 0 auto;
       & ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
         list-style: none;
         & li {
-          margin-bottom: 8px;
           color: gray;
         }
       }
