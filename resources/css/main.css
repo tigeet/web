@@ -13,6 +13,8 @@ main {
       display: flex;
       flex-direction: column;
       gap: 16px;
+      flex: 1 1 auto;
+
       & .content-item {
         & .syntax__list {
           display: flex;
