@@ -33,19 +33,37 @@ const FILTER_TYPE_ANY = "any";
     return vhItem;
   }
 
-  function render() {
+  async function render() {
     vhList.innerHTML = "";
+    const spinner = document.getElementById("spinner");
+    spinner.classList.remove("hidden");
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/posts/1/comments"
+    );
 
-    const versionHistory = JSON.parse(localStorage.getItem("vh")) ?? [];
-
-    versionHistory
-      .filter((version) => {
-        if (filterType.value === FILTER_TYPE_ANY) return true;
-        return version.type === filterType.value;
-      })
-      .filter((version) => version.description.includes(filterSearch.value))
-      .map((version) => createVersionElement(version))
-      .forEach((versionElement) => vhList.appendChild(versionElement));
+    if (!response.ok) {
+      vhList.innerHTML = "";
+      const error = document.createElement("div", { classList: ["error"] });
+      error.innerHTML = `error ${response.status}`;
+      vhList.appendChild(error);
+    } else {
+      const data = await response.json();
+      const versionHistory = data.map((comment) => ({
+        version: comment.id,
+        description: comment.body,
+        type: "major",
+      }));
+      // const versionHistory = JSON.parse(localStorage.getItem("vh")) ?? [];
+      versionHistory
+        .filter((version) => {
+          if (filterType.value === FILTER_TYPE_ANY) return true;
+          return version.type === filterType.value;
+        })
+        .filter((version) => version.description.includes(filterSearch.value))
+        .map((version) => createVersionElement(version))
+        .forEach((versionElement) => vhList.appendChild(versionElement));
+    }
+    spinner.classList.add("hidden");
   }
 
   form.onsubmit = (e) => {
