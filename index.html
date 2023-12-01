@@ -13,16 +13,22 @@
   <link rel="stylesheet" href="./resources/css/footer.css">
   <link rel="stylesheet" href="./resources/css/global.css">
   <link rel="stylesheet" href="./resources/css/content-item.css">
-
+  <link rel="stylesheet" href="./resources/prism.css">
   <link rel="icon" href="./resources/assets/icon.png" type="image/png">
 
   <script src="./resources/scripts/load.js" defer></script>
+  <script src="./resources/prism.js" defer></script>
   <script src="./resources/scripts/link.js" defer></script>
-
+  <script src="./resources/scripts/slick.js" defer></script>
   <meta name="keywords" content="md, MD, markdown, syntax, markdown syntax">
   <meta name="description" content="The markdown syntax basics">
   <meta name="author" content="koido">
   <title>The Markdown Basics - Home</title>
+
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 </head>
 
 <body>
@@ -79,20 +85,20 @@
             <section class="syntax__item">
               <h4 class="content-item__subheading">Headings</h4>
               <p class="syntax__descripton">HTML headings are titles or subtitles</p>
-              <pre><code class="syntax__code code-markdown"># Heading level 1
+              <pre><code class="language-markup syntax__code code-markdown "># Heading level 1
 ## Heading level 2</code></pre>
             </section>
 
             <section class="syntax__item">
               <h4 class="content-item__subheading">Blockquotes</h4>
               <p class="syntax__descripton">Blockquote indicates that the enclosed text is an extended quotation</p>
-              <pre><code class="syntax__code code-markdown">> This is a blockquote</code></pre>
+              <pre><code class="language-markup syntax__code code-markdown">> This is a blockquote</code></pre>
             </section>
 
             <section class="syntax__item">
               <h4 class="content-item__subheading">Lists</h4>
               <p class="syntax__descripton">List allows to organize items into ordered and unordered lists</p>
-              <pre><code class="syntax__code code-markdown">1. First item
+              <pre><code class="language-markup syntax__code code-markdown">1. First item
 2. Second item
 3. Third item
   1. Indented item
@@ -220,6 +226,8 @@
       </div>
     </div>
   </footer>
+
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 
 </html>
